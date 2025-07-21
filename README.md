@@ -1,52 +1,116 @@
-# Astro Starter Kit: Basics
+# Astrogency | Astro Agency Template | Storyblok CMS
 
-```sh
-npm create astro@latest -- --template basics
+[![License: CC BY-ND 4.0](https://img.shields.io/badge/License-CC_BY--ND_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nd/4.0/)
+
+### 👉 [Demo & Docs](https://astrogency.unfolding.io/)
+
+## 📝 1. Setting up the .env file
+
+rename the `env.txt` to `.env` and fill in your details
+
+```
+STORYBLOK_PREVIEW_TOKEN=XXX
+STORYBLOK_PERSONAL_TOKEN=XXX
+STORYBLOK_SPACE_ID=000000
+STORYBLOK_REGION=eu
+LOCALE=en-US
+CURRENCY=USD
+SITE_LANG=en
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Also add this to your netlify/vercel deploy settings.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### 🧰 2. Install dependencies
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```bash
+npm install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### 🛠️ 3. Start Development server
 
-## 🧞 Commands
+```bash
+npm run dev
+```
+
+### 🔄 4. Sync your Storyblok Space
+
+open `https://localhost:4321/setup`
+
+And sync your Datasources, Components, and stories. it is best to first delete before syncing. 
+_if a sync or delete fails, try to refresh the page ant try again._
+
+![Astrorante](https://astrorante.unfolding.io/screenshots/sync.png)
+
+### ⚙️ 5. Add your site to the astro.config and set your adapter (vercel or netlify)
+
+
+```javascript
+
+export default defineConfig({
+	site: 'https://your-website.com',
+	output: "hybrid",
+  	adapter: vercel(), // vercel() or netlify()
+
+    ....
+
+```
+
+## 💎 Premium Features
+Enjoy the freedom of no attribution, effortless integration with Mailgun, Postmark, or Slack for contact forms, and Mailchimp support for your newsletters. Plus, harness the power of premium page builder blocks to create stunning, customized layouts that captivate your audience.
+
+### 👉 [upgrade](https://shop.unfolding.io/b/IWyfD)
+
+### 👉 [more information](https://astrogency.unfolding.io/blog/premium-components-and-features/)
+
+
+
+## 🛸 Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command                    | Action                                           |
+| -------------------------- | ------------------------------------------------ |
+| `npm install`              | Installs dependencies                            |
+| `npm run dev`              | Starts local dev server at `localhost:4321`      |
+| `npm run build`            | Build your production site to `./dist/`          |
+| `npm run preview`          | Preview your build locally, before deploying     |
+| `npm run astro ...`        | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help`  | Get help using the Astro CL                      |
 
-## 👀 Want to learn more?
+## 👀 Want to learn more about Astro?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Check out [Astro documentation](https://docs.astro.build) or jump into Astro's [Discord server](https://astro.build/chat).
+
+## 📚 Tech Stack
+
+Astro, Storyblok CMS, Vue, TailwindCSS
+
+## 🛟 Support
+
+If you encounter any issues or bugs, we encourage you to open an issue in the repository. To help us quickly address the problem, please provide detailed information about the bug and steps to reproduce it.
+
+For those seeking priority assistance, we offer premium support services. Feel free to reach out to us by email at [hello@unfolding.io.](mailto:hello@unfolding.io.) We're here to help!
+
+
+## ☕️ Want to Caffeinate your Developer? 
+
+By [caffeinating](https://www.buymeacoffee.com/unfolding.io) your developer, you're not just getting the best out of them; you're also ensuring a cheerful and energetic work environment.😊
+
+[![buymeacoffee](https://starfunnel.unfolding.io/screenshots/bymeacoffee.webp)](https://www.buymeacoffee.com/unfolding.io)
+
+
+## 📸 Screenshots
+
+![Astrorante](https://astrogency.unfolding.io/screenshots/Screenshot_0.png)
+![Astrorante](https://astrogency.unfolding.io/screenshots/Screenshot_1.png)
+![Astrorante](https://astrogency.unfolding.io/screenshots/Screenshot_2.png)
+![Astrorante](https://astrogency.unfolding.io/screenshots/Screenshot_3.png)
+![Astrorante](https://astrogency.unfolding.io/screenshots/Screenshot_4.png)
+![Astrorante](https://astrogency.unfolding.io/screenshots/Screenshot_5.png) 
+
+
+
+
+
+
