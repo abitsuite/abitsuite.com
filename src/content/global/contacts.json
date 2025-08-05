@@ -1,6 +1,6 @@
 {
-	"phone": "+1 1234567890",
-	"mail": "info@yourcompany.com",
+	"phone": "+1 678 916-6000",
+	"mail": "hello@abitsuite.com",
 	"socials": [
 		{
 			"title": "Facebook",
@@ -8,9 +8,9 @@
 			"icon": "ic:baseline-facebook"
 		},
 		{
-			"title": "Instagram",
-			"link": "https://www.instagram.com/",
-			"icon": "mdi:instagram"
+			"title": "X/Twitter",
+			"link": "https://x.com/BitSuite",
+			"icon": "mdi:twitter"
 		},
 		{
 			"title": "Youtube",

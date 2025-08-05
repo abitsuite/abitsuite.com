@@ -1,27 +1,27 @@
 ---
-import { getCollection } from "astro:content";
-import Container from "@/components/primitives/Container.astro";
-import Link from "@/components/primitives/Link.astro";
-import { getLocalizedSettings } from "@/lib/localization-helpers";
-import { translatePath, unlocalizedUrl } from "@/lib/localization-helpers";
-import { defaultLocale, locales } from "site";
+import { getCollection } from 'astro:content'
+import Container from '@/components/primitives/Container.astro'
+import Link from '@/components/primitives/Link.astro'
+import { getLocalizedSettings } from '@/lib/localization-helpers'
+import { translatePath, unlocalizedUrl } from '@/lib/localization-helpers'
+import { defaultLocale, locales } from 'site'
 
-const currentLocale = Astro.currentLocale;
+const currentLocale = Astro.currentLocale
 
-const { footer, contacts } = getLocalizedSettings(currentLocale);
+const { footer, contacts } = getLocalizedSettings(currentLocale)
 
 function getTranslatedUrl(locale: string): string {
-	const unlocalizedPath = unlocalizedUrl(Astro.url.pathname);
-	return translatePath(locale, unlocalizedPath);
+	const unlocalizedPath = unlocalizedUrl(Astro.url.pathname)
+	return translatePath(locale, unlocalizedPath)
 }
 
 function isActiveLocale(locale: string): boolean {
-	return locale === currentLocale;
+	return locale === currentLocale
 }
 
-const pages = await getCollection("pages");
-const services = await getCollection("services");
-const posts = await getCollection("posts");
+const pages = await getCollection('pages')
+const services = await getCollection('services')
+const posts = await getCollection('posts')
 
 // get top 6 pages which are informational pages
 const topInfoPages = pages
@@ -31,13 +31,13 @@ const topInfoPages = pages
 			...page,
 			lang: lang,
 			slug: page.slug.startsWith("/") ? page.slug : `/${page.slug}`,
-		};
+		}
 	})
 	.filter(
 		(page) =>
 			page.lang === currentLocale && page.data.type === "informational",
 	)
-	.slice(0, 6);
+	.slice(0, 6)
 
 const topServices = services
 	.map((page) => {
@@ -49,10 +49,10 @@ const topServices = services
 				lang,
 				`/service${unlocalizedUrl(`/${page.slug}`)}`,
 			),
-		};
+		}
 	})
 	.filter((page) => page.lang === currentLocale)
-	.slice(0, 6);
+	.slice(0, 6)
 
 const lastPosts = posts
 	.map((page) => {
@@ -64,7 +64,7 @@ const lastPosts = posts
 				lang,
 				`/post${unlocalizedUrl(`/${page.slug}`)}`,
 			),
-		};
+		}
 	})
 	.filter((page) => page.lang === currentLocale)
 	.sort(
@@ -72,7 +72,7 @@ const lastPosts = posts
 			new Date(b.data.lastUpdateDate).getTime() -
 			new Date(a.data.lastUpdateDate).getTime(),
 	)
-	.slice(0, 5);
+	.slice(0, 5)
 ---
 
 <div
@@ -123,7 +123,7 @@ const lastPosts = posts
 									<p
 										class="text-white border-b-2 text-lg pb-1 mb-3 border-white border-solid"
 									>
-										Collegamenti utili
+										Company
 									</p>
 									<ul
 										class="text-white/[0.65] mb-3 list-none"
@@ -243,7 +243,7 @@ const lastPosts = posts
 							><p
 								class="text-white border-b-2 cursor-pointer pb-1 border-white border-solid"
 							>
-								Privacy policy
+								Privacy
 							</p></a
 						><a href="/terms" class="inline-block max-w-full"
 							><p
