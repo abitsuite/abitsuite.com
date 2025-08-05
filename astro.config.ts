@@ -1,15 +1,15 @@
-import alpinejs from "@astrojs/alpinejs";
-import cloudflare from "@astrojs/cloudflare";
-import markdoc from "@astrojs/markdoc";
-import react from "@astrojs/react";
-import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
-import keystatic from "@keystatic/astro";
-import AstroPWA from "@vite-pwa/astro";
-import icon from "astro-icon";
-import robotsTxt from "astro-robots-txt";
-import { defineConfig } from "astro/config";
-import { defaultLocale, locales, siteTitle, siteUrl } from "./site.config";
+import alpinejs from '@astrojs/alpinejs'
+import cloudflare from '@astrojs/cloudflare'
+import markdoc from '@astrojs/markdoc'
+import react from '@astrojs/react'
+import sitemap from '@astrojs/sitemap'
+import tailwind from '@astrojs/tailwind'
+import keystatic from '@keystatic/astro'
+import AstroPWA from '@vite-pwa/astro'
+import icon from 'astro-icon'
+import robotsTxt from 'astro-robots-txt'
+import { defineConfig } from 'astro/config'
+import { defaultLocale, locales, siteTitle, siteUrl } from './site.config'
 
 // https://astro.build/config
 export default defineConfig({
@@ -55,7 +55,7 @@ export default defineConfig({
 			mode: import.meta.env.PROD ? "production" : "development",
 			base: "/",
 			scope: "/",
-			includeAssets: ["favicon.svg"],
+			includeAssets: ["icon.svg"],
 			registerType: "autoUpdate",
 			injectRegister: false,
 			manifest: {
@@ -83,4 +83,4 @@ export default defineConfig({
 			},
 		}),
 	],
-});
+})

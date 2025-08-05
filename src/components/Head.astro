@@ -1,30 +1,30 @@
 ---
-import { pwaAssetsHead } from "virtual:pwa-assets/head";
-import { pwaInfo } from "virtual:pwa-info";
-import "@/styles/global.css";
-import { getLocalizedSettings } from "@/lib/localization-helpers";
-import { SEO, type SEOProps } from "astro-seo";
+import { pwaAssetsHead } from 'virtual:pwa-assets/head'
+import { pwaInfo } from 'virtual:pwa-info'
+import '@/styles/global.css'
+import { getLocalizedSettings } from '@/lib/localization-helpers'
+import { SEO, type SEOProps } from 'astro-seo'
 
 type Props = {
 	seo?: SEOProps | MinimalSeo;
-};
+}
 
-const currentLocale = Astro.currentLocale;
+const currentLocale = Astro.currentLocale
 
-const { seo: defaultSeo, style } = getLocalizedSettings(currentLocale);
+const { seo: defaultSeo, style } = getLocalizedSettings(currentLocale)
 
-const { seo: seoProp } = Astro.props;
+const { seo: seoProp } = Astro.props
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString()
 
 const pathWithSlash = Astro.url.pathname.endsWith("/")
 	? Astro.url.pathname
-	: `${Astro.url.pathname}/`;
+	: `${Astro.url.pathname}/`
 
 const shareImage = new URL(
 	"og.png",
 	new URL(pathWithSlash, Astro.site),
-).toString();
+).toString()
 
 const baseSeo: SEOProps = {
 	title: seoProp?.title ?? defaultSeo.title,
@@ -62,12 +62,12 @@ const baseSeo: SEOProps = {
 			},
 		],
 	},
-};
+}
 
 const seo = {
 	...baseSeo,
 	...seoProp,
-};
+}
 ---
 
 <head>
