@@ -12,11 +12,15 @@
 			"link": "/about"
 		},
 		{
+			"title": "Suite",
+			"link": "/about"
+		},
+		{
 			"title": "Projects",
 			"link": "/works"
 		},
 		{
-			"title": "Contacts",
+			"title": "Contact",
 			"link": "/contact"
 		}
 	],
